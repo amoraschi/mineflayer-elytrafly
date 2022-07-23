@@ -1,10 +1,12 @@
 {
   "name": "mineflayer-elytrafly",
   "version": "1.0.0",
-  "description": "",
+  "description": "Plugin for ElytraFly on mineflayer bots",
   "main": "dist/index.js",
   "scripts": {
-    "test": "tsc && node ."
+    "build": "tsc",
+    "lint": "ts-standard",
+    "fix": "ts-standard --fix"
   },
   "keywords": [],
   "author": "amoraschi",

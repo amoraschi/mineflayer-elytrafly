@@ -28,18 +28,19 @@ class ElytraFly {
     this.onTick = this.onTick.bind(this)
   }
 
-  public start () {
+  public start (): void {
     this.bot.look(this.bot.entity.yaw, 0, true)
+      .finally(() => {})
 
     this.tryingToTakeOff = true
     this.bot.on('physicsTick', this.onTick)
   }
 
-  public stop () {
+  public stop (): void {
     this.bot.removeListener('physicsTick', this.onTick)
   }
 
-  public setControlState (state: string, value: boolean) {
+  public setControlState (state: string, value: boolean): void {
     switch (state) {
       case 'up':
         this.heightDir = value ? 1 : 0
@@ -56,7 +57,7 @@ class ElytraFly {
     }
   }
 
-  private onTick () {
+  private onTick (): void {
     const slot = this.bot.getEquipmentDestSlot('torso')
     const item = this.bot.inventory.slots[slot]
     if (item == null || item.name !== 'elytra') {
@@ -79,15 +80,15 @@ class ElytraFly {
     }
   }
 
-  private sendStartStopPacket () {
+  private sendStartStopPacket (): void {
     this.bot._client.write('entity_action', {
       actionId: 8
     })
   }
 
-  private controlHeight () {
+  private controlHeight (): void {
     const vel = this.bot.entity.velocity
-  
+
     if (this.heightDir === 1) {
       this.bot.entity.velocity.set(vel.x, vel.y + this.options.velocityUpRate, vel.z)
     } else if (this.heightDir === -1) {
@@ -97,7 +98,7 @@ class ElytraFly {
     }
   }
 
-  private controlSpeed () {
+  private controlSpeed (): void {
     const yaw = this.bot.entity.yaw
     const forward = vec3({ x: Math.sin(yaw) * this.options.speed, y: 0, z: Math.cos(yaw) * this.options.speed })
 
@@ -114,7 +115,7 @@ class ElytraFly {
     }
   }
 
-  private doInstantFly () {
+  private doInstantFly (): void {
     this.bot.setControlState('jump', true)
     setTimeout(() => {
       this.sendStartStopPacket()
@@ -122,11 +123,12 @@ class ElytraFly {
     }, 55)
   }
 
-  public async elytraFlyTo (pos: Vec3) {
+  public elytraFlyTo (pos: Vec3): void {
     this.prevVelocity = this.options.speed
     this.options.speed = 0.05
     pos.y = this.bot.entity.position.y + this.bot.entity.height
-    await this.bot.lookAt(pos, true)
+    this.bot.lookAt(pos, true)
+      .finally(() => {})
 
     // this.setControlState('up', true)
     this.setControlState('forward', true)
@@ -137,9 +139,10 @@ class ElytraFly {
     this.bot.on('move', this.onMove)
   }
 
-  private onMove () {
+  private onMove (): void {
     (this.currentGoalPos as Vec3).y = this.bot.entity.position.y + this.bot.entity.height
     this.bot.lookAt(this.currentGoalPos as Vec3, true)
+      .finally(() => {})
     const velToSet = this.options.speed * this.bot.entity.position.xzDistanceTo(this.currentGoalPos as Vec3) / 100
     this.options.speed = velToSet > 0.5 ? 0.4 : (velToSet < 0.05 ? 0.05 : velToSet)
     if (this.bot.entity.position.xzDistanceTo(this.currentGoalPos as Vec3) < 5) {
@@ -153,7 +156,7 @@ class ElytraFly {
     }
   }
 
-  private waitForGround () {
+  private waitForGround (): void {
     if (this.bot.entity.onGround) {
       this.bot.removeListener('move', this.waitForGround)
       this.bot.emit('elytraFlyGoalReached')
