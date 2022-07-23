@@ -120,7 +120,7 @@ class ElytraFly {
     setTimeout(() => {
       this.sendStartStopPacket()
       this.bot.setControlState('jump', false)
-    }, 55)
+    }, this.decideTimeout())
   }
 
   public elytraFlyTo (pos: Vec3): void {
@@ -160,6 +160,14 @@ class ElytraFly {
     if (this.bot.entity.onGround) {
       this.bot.removeListener('move', this.waitForGround)
       this.bot.emit('elytraFlyGoalReached')
+    }
+  }
+
+  private decideTimeout (): number {
+    if (parseInt(this.bot.majorVersion.replace(/\./g, '')) >= 115) {
+      return 55
+    } else {
+      return 400
     }
   }
 }
