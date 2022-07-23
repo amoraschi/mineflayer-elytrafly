@@ -40,7 +40,12 @@ class ElytraFly {
     this.bot.removeListener('physicsTick', this.onTick)
   }
 
-  public setControlState (state: string, value: boolean): void {
+  public forceStop () {
+    this.bot.removeListener('physicsTick', this.onTick)
+    this.sendStartStopPacket()
+  }
+
+  public setControlState (state: ElytraState, value: boolean): void {
     switch (state) {
       case 'up':
         this.heightDir = value ? 1 : 0
@@ -123,18 +128,18 @@ class ElytraFly {
     }, this.decideTimeout())
   }
 
-  public elytraFlyTo (pos: Vec3): void {
+  public elytraFlyTo (position: Vec3): void {
     this.prevVelocity = this.options.speed
     this.options.speed = 0.05
-    pos.y = this.bot.entity.position.y + this.bot.entity.height
-    this.bot.lookAt(pos, true)
+    position.y = this.bot.entity.position.y + this.bot.entity.height
+    this.bot.lookAt(position, true)
       .finally(() => {})
 
     // this.setControlState('up', true)
     this.setControlState('forward', true)
     this.start()
 
-    this.currentGoalPos = pos
+    this.currentGoalPos = position
     this.onMove = this.onMove.bind(this)
     this.bot.on('move', this.onMove)
   }
@@ -172,6 +177,9 @@ class ElytraFly {
   }
 }
 
+type ElytraState = 'forward' | 'back' | 'up' | 'down'
+
 export {
-  ElytraFly
+  ElytraFly,
+  ElytraState
 }
