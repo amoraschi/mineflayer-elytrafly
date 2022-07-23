@@ -1,6 +1,6 @@
 {
   "name": "mineflayer-elytrafly",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plugin for ElytraFly on mineflayer bots",
   "main": "dist/index.js",
   "scripts": {
@@ -8,7 +8,12 @@
     "lint": "ts-standard",
     "fix": "ts-standard --fix"
   },
-  "keywords": [],
+  "keywords": [
+    "mineflayer",
+    "bot",
+    "minecraft",
+    "elytra"
+  ],
   "author": "amoraschi",
   "license": "ISC",
   "type": "module",
