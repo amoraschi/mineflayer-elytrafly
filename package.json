@@ -14,5 +14,8 @@
   "type": "module",
   "dependencies": {
     "mineflayer": "^4.3.0"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
