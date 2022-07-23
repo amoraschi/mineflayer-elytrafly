@@ -15,6 +15,9 @@
   "dependencies": {
     "mineflayer": "^4.3.0"
   },
+  "devDependencies": {
+    "ts-standard": "^11.0.0"
+  },
   "files": [
     "dist"
   ]
