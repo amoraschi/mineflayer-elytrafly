@@ -4,6 +4,7 @@
 <p align="center">
   <img src="https://img.shields.io/github/repo-size/amoraschi/mineflayer-elytrafly?style=for-the-badge&logo=github" />
   <img src="https://img.shields.io/npm/v/mineflayer-elytrafly?style=for-the-badge&logo=npm" />
+  <img src="https://shields-io-visitor-counter.herokuapp.com/badge?page=mineflayer-elytrafly&style=for-the-badge&color=brightgreen" />
 </p>
 
 <h3>How to use with mineflayer bots</h3>
