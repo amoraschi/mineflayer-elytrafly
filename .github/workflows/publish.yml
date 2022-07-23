@@ -34,7 +34,7 @@ jobs:
     - name: Lint code
       run: npm install && npm run lint
 
-  deploy:
+  publish:
     runs-on: ubuntu-latest
     needs: [ lint ]
     if: github.ref == 'refs/heads/master'

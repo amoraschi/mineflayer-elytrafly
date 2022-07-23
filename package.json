@@ -1,6 +1,6 @@
 {
   "name": "mineflayer-elytrafly",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Plugin for ElytraFly on mineflayer bots",
   "main": "dist/index.js",
   "scripts": {
