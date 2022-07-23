@@ -40,7 +40,7 @@ class ElytraFly {
     this.bot.removeListener('physicsTick', this.onTick)
   }
 
-  public forceStop () {
+  public forceStop (): void {
     this.bot.removeListener('physicsTick', this.onTick)
     this.sendStartStopPacket()
   }
