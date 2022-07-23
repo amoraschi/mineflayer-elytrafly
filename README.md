@@ -46,15 +46,21 @@ Options for the plugin, applies even while flying
 
 *Warning* | I don't recommend changing the speed option, `bot.elytrafly.flyTo` changes it but reverts it back when it's finished
 
+---
+
 ```js
 bot.elytrafly.start()
 ```
 
 Makes the bot fly with the elytra, by default it will go forwards, you can change this before starting with:
 
+---
+
 ```js
 bot.elytrafly.setControlState(state: string, value: boolean)
 ```
+
+The bot should follow its sight, this means you can change its course by changing the bot's `yaw`
 
 States:
 
@@ -63,17 +69,23 @@ States:
 - up
 - down
 
+---
+
 ```js
 bot.elytrafly.stop()
 ```
 
 Stops the bot without closing the elytra and makes it descend slowly (shouldn't take fall damage)
 
+---
+
 ```js
 bot.elytrafly.forceStop()
 ```
 
 Stops the bot closing the elytra (could potentially kill the bot with fall damage)
+
+---
 
 ```js
 bot.elytrafly.flyTo(position: Vec3)
