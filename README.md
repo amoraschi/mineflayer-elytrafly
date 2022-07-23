@@ -28,6 +28,8 @@ In your code (preferably after spawning the bot)
 
 ---
 
+<h4><i>Properties</i></h4>
+
 Assuming the bot has already an elytra equipped
 
 ```js
@@ -47,6 +49,8 @@ Options for the plugin, applies even while flying
 *Warning* | I don't recommend changing the speed option, `bot.elytrafly.flyTo` changes it but reverts it back when it's finished
 
 ---
+
+<h4><i>Methods</i></h4>
 
 ```js
 bot.elytrafly.start()
@@ -94,3 +98,11 @@ bot.elytrafly.flyTo(position: Vec3)
 *Experimental* | The bot will attempt to go near the position by flying (doesn't pathfind, just looks straight at the position and flies there, needs an open space)
 
 The flying speed is proportional to the distance to the goal, but once it gets near, it slows down, and slowly descends to the ground
+
+---
+
+<h4><i>Events</i></h4>
+
+- `elytraFlyGoalReached`
+
+Self-explanatory, fires when it has reached the goal with `bot.elytrafly.flyTo`
