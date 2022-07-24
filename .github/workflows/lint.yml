@@ -17,19 +17,5 @@ jobs:
       with:
         node-version: 14.5.0
 
-    - name: Compile TS
-      run: npm install && npm run build
-
-  lint:
-    runs-on: ubuntu-latest
-    needs: [ build ]
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@master
-      with:
-        node-version: 14.5.0
-
-    - name: Lint code
-      run: npm install && npm run lint
+    - name: Compile TS and Lint
+      run: npm install && npm run build && npm run lint
