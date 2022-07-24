@@ -26,5 +26,13 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amoraschi/mineflayer-elytrafly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amoraschi/mineflayer-elytrafly/issues"
+  },
+  "homepage": "https://github.com/amoraschi/mineflayer-elytrafly#readme"
 }
