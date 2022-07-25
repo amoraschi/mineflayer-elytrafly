@@ -2,9 +2,9 @@
 <p align="center">Plugin for Mineflayer bots to make them fly (i.e. blatantly cheat)</p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/repo-size/amoraschi/mineflayer-elytrafly?style=for-the-badge&logo=github" />
-  <img src="https://img.shields.io/npm/v/mineflayer-elytrafly?style=for-the-badge&logo=npm" />
-  <img src="https://shields-io-visitor-counter.herokuapp.com/badge?page=mineflayer-elytrafly&style=for-the-badge&color=brightgreen" />
+  <a href="https://github.com/amoraschi/mineflayer-elytrafly" target="_blank"><img src="https://img.shields.io/github/repo-size/amoraschi/mineflayer-elytrafly?style=for-the-badge&logo=github" /></a>
+  <a href="https://www.npmjs.com/package/mineflayer-elytrafly" target="_blank"><img src="https://img.shields.io/npm/v/mineflayer-elytrafly?style=for-the-badge&logo=npm" /></a>
+  <a href="https://github.com/ESKYoung/shields-io-visitor-counter"><img src="https://shields-io-visitor-counter.herokuapp.com/badge?page=mineflayer-elytrafly&style=for-the-badge&color=brightgreen" /></a>
 </p>
 
 <h3>How to use with mineflayer bots</h3>
