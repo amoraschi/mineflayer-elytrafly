@@ -135,7 +135,7 @@ class ElytraFly {
     this.bot.lookAt(position, true)
       .finally(() => {})
 
-    // this.setControlState('up', true)
+    this.setControlState('up', false)
     this.setControlState('forward', true)
     this.start()
 
@@ -165,6 +165,7 @@ class ElytraFly {
     if (this.bot.entity.onGround) {
       this.bot.removeListener('move', this.waitForGround)
       this.bot.emit('elytraFlyGoalReached')
+      this.setControlState('forward', true)
     }
   }
 
