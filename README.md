@@ -8,6 +8,8 @@
   <a href="https://github.com/ESKYoung/shields-io-visitor-counter"><img src="https://shields-io-visitor-counter.herokuapp.com/badge?page=mineflayer-elytrafly&style=for-the-badge&color=brightgreen" /></a>
 </p>
 
+<h2 align="center">Warning, this project hasn't been updated in a while, I don't guarantee it will work</h2>
+
 <h3>How to use with mineflayer bots</h3>
 
 ---
