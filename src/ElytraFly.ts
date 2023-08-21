@@ -8,7 +8,7 @@ class ElytraFly {
   private heightDir: number = 0
   private moveDir: number = 1
   private tryingToTakeOff: boolean = false
-  private prevVelocity: number
+  private prevVelocity: number = 0.05
   private currentGoalPos: Vec3 | null = null
 
   public options: {

@@ -1,14 +1,14 @@
 <h1 align="center">mineflayer-elytrafly</h1>
 <p align="center">Plugin for Mineflayer bots to make them fly (i.e. blatantly cheat)</p>
+<p align="center">Compatible with both CommonJS and ES syntax</p>
 
 <p align="center">
-  <a href="https://discord.gg/Kjd3gX29p8"><img src="https://img.shields.io/badge/DISCORD-JOIN-7289da?style=for-the-badge" alt="amoraschi"></a>
-  <a href="https://github.com/amoraschi/mineflayer-elytrafly" target="_blank"><img src="https://img.shields.io/github/repo-size/amoraschi/mineflayer-elytrafly?style=for-the-badge&logo=github" /></a>
-  <a href="https://www.npmjs.com/package/mineflayer-elytrafly" target="_blank"><img src="https://img.shields.io/npm/v/mineflayer-elytrafly?style=for-the-badge&logo=npm" /></a>
-  <a href="https://github.com/ESKYoung/shields-io-visitor-counter"><img src="https://shields-io-visitor-counter.herokuapp.com/badge?page=mineflayer-elytrafly&style=for-the-badge&color=brightgreen" /></a>
+  <a href="https://discord.gg/https://discord.gg/prismarinejs-413438066984747026"><img src="https://img.shields.io/badge/DISCORD-JOIN-7289da?style=for-the-badge" alt="PrismarineJS Discord"></a>
+  <a href="https://github.com/amoraschi/mineflayer-elytrafly" target="_blank"><img src="https://img.shields.io/github/repo-size/amoraschi/mineflayer-elytrafly?style=for-the-badge&logo=github" alt="Repository size"/></a>
+  <a href="https://www.npmjs.com/package/mineflayer-elytrafly" target="_blank"><img src="https://img.shields.io/npm/v/mineflayer-elytrafly?style=for-the-badge&logo=npm" alt="NPM version" /></a>
 </p>
 
-<h2 align="center">Warning, this project hasn't been updated in a while, I don't guarantee it will work</h2>
+<!-- <h2 align="center">Warning, this project hasn't been updated in a while, I don't guarantee it will work</h2> -->
 
 <h3>How to use with mineflayer bots</h3>
 
