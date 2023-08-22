@@ -1,10 +1,11 @@
 {
   "name": "mineflayer-elytrafly",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "Plugin for ElytraFly on mineflayer bots",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
+    "prepare": "npm run build && require-self",
     "lint": "ts-standard",
     "fix": "ts-standard --fix"
   },
@@ -20,6 +21,7 @@
     "mineflayer": "^4.3.0"
   },
   "devDependencies": {
+    "require-self": "^0.2.3",
     "ts-standard": "^11.0.0",
     "typescript": "^4.7.4"
   },

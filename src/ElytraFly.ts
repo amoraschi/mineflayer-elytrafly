@@ -15,14 +15,21 @@ class ElytraFly {
     speed: number
     velocityUpRate: number
     velocityDownRate: number
+    proportionalSpeed: boolean
   }
 
-  constructor (bot: Bot, options?: { speed: number, velocityUpRate: number, velocityDownRate: number }) {
+  constructor (bot: Bot, options?: {
+    speed: number,
+    velocityUpRate: number,
+    velocityDownRate: number,
+    proportionalSpeed: boolean,
+  }) {
     this.bot = bot
     this.options = {
       speed: options?.speed ?? 0.05,
       velocityUpRate: options?.velocityUpRate ?? 0.1,
-      velocityDownRate: options?.velocityDownRate ?? 0.01
+      velocityDownRate: options?.velocityDownRate ?? 0.01,
+      proportionalSpeed: options?.proportionalSpeed ?? true
     }
 
     this.onTick = this.onTick.bind(this)
@@ -130,7 +137,6 @@ class ElytraFly {
 
   public elytraFlyTo (position: Vec3): void {
     this.prevVelocity = this.options.speed
-    this.options.speed = 0.05
     position.y = this.bot.entity.position.y + this.bot.entity.height
     this.bot.lookAt(position, true)
       .finally(() => {})
@@ -149,7 +155,13 @@ class ElytraFly {
     this.bot.lookAt(this.currentGoalPos as Vec3, true)
       .finally(() => {})
     const velToSet = this.options.speed * this.bot.entity.position.xzDistanceTo(this.currentGoalPos as Vec3) / 100
-    this.options.speed = velToSet > 0.5 ? 0.4 : (velToSet < 0.05 ? 0.05 : velToSet)
+
+    if (this.options.proportionalSpeed) {
+      this.options.speed = velToSet > 0.5 ? 0.4 : (velToSet < 0.05 ? 0.05 : velToSet)
+    } else {
+      this.options.speed = this.prevVelocity
+    }
+
     if (this.bot.entity.position.xzDistanceTo(this.currentGoalPos as Vec3) < 5) {
       this.bot.removeListener('move', this.onMove)
       this.options.speed = this.prevVelocity

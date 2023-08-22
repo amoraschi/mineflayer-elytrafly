@@ -47,6 +47,7 @@ Options for the plugin, applies even while flying
   speed: number // Default: 0.05
   velocityUpRate: number // Default: 0.1
   velocityDownRate: number // Default: 0.01
+  proportionalSpeed: boolean // Default: true
 }
 ```
 
@@ -101,7 +102,7 @@ bot.elytrafly.flyTo(position: Vec3)
 
 *Experimental* | The bot will attempt to go near the position by flying (doesn't pathfind, just looks straight at the position and flies there, needs an open space)
 
-The flying speed is proportional to the distance to the goal, but once it gets near, it slows down, and slowly descends to the ground
+If `proportionalSpeed` is set to `true`, the flying speed is proportional to the distance to the goal, but once it gets near, it slows down, and slowly descends to the ground
 
 ---
 
