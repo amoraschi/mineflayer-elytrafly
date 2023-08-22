@@ -19,10 +19,10 @@ class ElytraFly {
   }
 
   constructor (bot: Bot, options?: {
-    speed: number,
-    velocityUpRate: number,
-    velocityDownRate: number,
-    proportionalSpeed: boolean,
+    speed: number
+    velocityUpRate: number
+    velocityDownRate: number
+    proportionalSpeed: boolean
   }) {
     this.bot = bot
     this.options = {
