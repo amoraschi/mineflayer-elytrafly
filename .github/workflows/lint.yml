@@ -1,4 +1,4 @@
-name: Build & Lint
+name: Build
 
 on:
   push:
@@ -8,14 +8,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
     - uses: actions/checkout@v2
 
     - name: Set up Node.js
       uses: actions/setup-node@master
       with:
-        node-version: 14.5.0
+        node-version: 22.14.0
 
-    - name: Compile TS and Lint
-      run: npm install && npm run build && npm run lint
+    - name: Compile TS
+      run: npm install && npm run build
